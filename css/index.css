@@ -7,6 +7,7 @@
     --grey: #848199;
     --red: #fa513a;
     --red-light: #FFD5B6;
+    --red-light-button: #FF994F;
     --grey-2: #a3a3a3;
     --bg: #f5f5fa;
     --headline2: 600 1.75rem/normal Poppins;
@@ -54,8 +55,12 @@ body {
     color: var(--black);
     border-radius: 26px;
     box-sizing: border-box;
-    padding-block: 37px;
+    padding-block: 29px;
     padding-inline: 29px;
+}
+
+.card-option-popular {
+    text-align: right;
 }
 
 .btn-popular {
@@ -73,6 +78,10 @@ body {
     font: var(--headline2);
 }
 
+.price-mount::before {
+    content: '$ ';
+}
+
 .month-price {
     font: var(--body1-regular);
 }
@@ -83,12 +92,26 @@ body {
 }
 
 .list-access {
-    font: var(--body2-regular)
+    font: var(--body2-regular);
+    padding-inline-start: 0;
 }
 
 .list-access li {
     list-style-type: none;
     margin-block-end: 16px;
+    /* margin-inline-start: 8px; */
+}
+
+.list-access li::before {
+    content: '\2713';
+    border-radius: 50%;
+    block-size: 20px;
+    inline-size: 20px;
+    background-color: var(--red-light-button);
+    color: var(--white);
+    padding-block: 3px;
+    padding-inline: 5px;
+    margin-inline-end: 8px;
 }
 
 .btn-plan {

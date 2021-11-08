@@ -6,6 +6,7 @@
     --white: #ffffff;
     --grey: #848199;
     --red: #fa513a;
+    --red-popular: #FF8E3C;
     --red-light: #FFD5B6;
     --red-light-button: #FF994F;
     --grey-2: #a3a3a3;
@@ -66,6 +67,7 @@ body {
     box-sizing: border-box;
     padding-block: 29px;
     padding-inline: 29px;
+    cursor: pointer;
 }
 
 .card-option-popular {
@@ -116,11 +118,19 @@ body {
     border-radius: 50%;
     block-size: 20px;
     inline-size: 20px;
-    background-color: var(--red-light-button);
-    color: var(--white);
+    background-color: rgba(55, 55, 55, 0.2);
+    color: var(--black);
     padding-block: 3px;
     padding-inline: 5px;
     margin-inline-end: 8px;
+}
+
+.option-disabled {
+    opacity: 0.2;
+}
+
+.d-none {
+    display: none;
 }
 
 .btn-plan {
@@ -129,9 +139,24 @@ body {
     width: 100%;
     border: none;
     border-radius: 90px;
+    background: rgba(255, 142, 60, 0.1);
+    color: var(--primary);
+    font: var(--body1-bold);
+}
+
+.card-content:hover {
+    background-color: var(--red-popular);
+    box-shadow: 0px 42px 34px rgba(82, 67, 194, 0.295755);
+}
+
+.card-content:hover .btn-plan {
     background-color: var(--black);
     color: var(--white);
-    font: var(--body1-bold);
+}
+
+.card-content:hover .list-access li::before {
+    background-color: var(--red-light-button);
+    color: var(--white);
 }
 
 @media screen and (min-width:1024px) {
@@ -146,14 +171,13 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        /* gap: 32px; */
         background-color: var(--white);
         border-radius: 26px;
         padding-block: 40px;
         padding-inline: 40px;
+        position: absolute;
     }
     .card-content {
-        /* border: 4px solid red; */
         inline-size: 234px;
         padding-block: 0;
         padding-inline: 0;
@@ -163,5 +187,13 @@ body {
     }
     .content-title {
         margin-block-end: 130px;
+    }
+    .card-content:hover {
+        top: -82px;
+        inline-size: 292px;
+        padding-inline-start: 20px;
+        padding-inline-end: 37px;
+        padding-block: 34px;
+        position: relative;
     }
 }

@@ -6,11 +6,13 @@
     --white: #ffffff;
     --grey: #848199;
     --red: #fa513a;
+    --red-light: #FFD5B6;
     --grey-2: #a3a3a3;
     --bg: #f5f5fa;
     --headline2: 600 1.75rem/normal Poppins;
     --headline3: 600 1.25rem/1.375rem Poppins;
     --button: 400 0.875rem/1rem Poppins;
+    --button-bold: 700 0.875rem/1rem Poppins;
     --headline1: 600 3.5rem/normal Poppins;
     --body1-regular: 400 1rem/1.5rem Poppins;
     --body1-bold: 700 1rem/1.5rem Poppins;
@@ -29,7 +31,7 @@ body {
 }
 
 .wrapper {
-    border: 10px solid blue;
+    /* border: 10px solid blue; */
     max-inline-size: 292px;
     margin: 34px auto;
 }
@@ -41,20 +43,76 @@ body {
     margin-inline: 0;
 }
 
-.card-price {
+.card-price-list {
     display: flex;
     flex-direction: column;
     gap: 48px;
+}
+
+.card-content {
     background-color: var(--white);
+    color: var(--black);
+    border-radius: 26px;
+    box-sizing: border-box;
+    padding-block: 37px;
+    padding-inline: 29px;
+}
+
+.btn-popular {
+    padding-block: 6px;
+    padding-inline: 18px;
+    border: none;
+    border-radius: 13px;
+    background-color: var(--red-light);
+    font: var(--button-bold);
+    justify-content: right;
+    margin-block-end: 6px;
+}
+
+.price-mount {
+    font: var(--headline2);
+}
+
+.month-price {
+    font: var(--body1-regular);
+}
+
+.title-card {
+    margin-block-start: 16px;
+    margin-block-end: 10px;
+}
+
+.list-access {
+    font: var(--body2-regular)
+}
+
+.list-access li {
+    list-style-type: none;
+    margin-block-end: 16px;
+}
+
+.btn-plan {
+    padding-block: 12px;
+    padding-inline: 32px;
+    width: 100%;
+    border: none;
+    border-radius: 90px;
+    background-color: var(--black);
+    color: var(--white);
+    font: var(--body1-bold);
 }
 
 @media screen and (min-width:1024px) {
     .wrapper {
         max-inline-size: 1170px;
-        border: 10px solid red;
+        /* border: 10px solid red; */
         margin: 128px auto;
     }
     .title-text {
         font: var(--headline1);
+    }
+    .card-price-list {
+        flex-direction: row;
+        gap: 48px;
     }
 }
